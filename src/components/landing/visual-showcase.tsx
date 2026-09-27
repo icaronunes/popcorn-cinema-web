@@ -94,7 +94,7 @@ export function VisualShowcase() {
   const traducoes = {
     pt: {
       app: "Aplicativo",
-      desc: "📱 Encontre uma Encontre uma sala de cinama perto de você e seus amigos 📺",
+      desc: "📱 Encontre uma sala de cinama perto de você e seus amigos 📺",
     },
   };
   const language =  traducoes["pt"];
@@ -105,11 +105,11 @@ export function VisualShowcase() {
         className="relative py-16 sm:py-10 bg-secondary/30"
       >
         <Image
-          src="background-oscar.webp"
+          src="cinema background.png"
           alt="background image oscar"
           fill
           quality={quality}
-          className="object-cover opacity-40"
+          className="object-cover opacity-90"
           data-ai-hint="app showcase"
         />
         <div className="relative container mx-auto px-4">
@@ -179,7 +179,7 @@ const PhoneMockup = ({ feature }: { feature: Feature[] }) => {
           ))}
         </div>
       </div>
-      <p className="mt-4 text-lg font-medium">{label}</p>
+      <p className="text-white mt-4 text-lg font-medium">{label}</p>
     </div>
   );
 };
