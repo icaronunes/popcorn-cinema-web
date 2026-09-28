@@ -89,7 +89,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(calc(-100% + 520px));
+      transform: translateY(calc(-100% + 444px));
     }
   }
   .animate-scroll-vertical {

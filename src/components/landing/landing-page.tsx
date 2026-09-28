@@ -12,8 +12,8 @@ export default function LandingPage() {
       <Analytics />
       <Header />
       <main className="flex-grow">
-        <VisualShowcase />
         <HeroSection />
+        <VisualShowcase />
       </main>
       <Footer />
     </div>

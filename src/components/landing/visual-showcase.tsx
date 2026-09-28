@@ -1,133 +1,102 @@
 "use client";
 import Image from "next/image";
 import { ScrollReveal } from "./scroll-reveal";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useLanguage } from "@/hooks/use-Language";
 
 type Feature = {
   src: string;
   srcLarge: string;
+  imageHeight: number;
   alt: string;
   hint: string;
   label: string;
-  label_en: string;
 };
 
-const features: Feature[][] = [
-  [
+const features: Feature[] = [
     {
-      label: "Acompanhando",
-      label_en: "Fallowing",
-      src: "/segue.webp",
-      srcLarge: "/segue-large.webp",
+      label: "Detalhes Filme",
+      src: "/Screen_4.png",
+      srcLarge: "/Screen_4.png",
+      imageHeight: 6185,
       alt: "App screenshot 1",
       hint: "app screen tracking",
-    },
+    }
+  ,
     {
-      label: "Acompanhando",
-      label_en: "Fallowing",
-      src: "/segue2.webp",
-      srcLarge: "/segue2-large.webp",
-      alt: "App screenshot 2",
-      hint: "app screen series",
-    },
-  ],
-  [
-    {
-      label: "Series",
-      label_en: "Tv",
-      src: "/serie.webp",
-      srcLarge: "/serie-large.webp",
+      label: "Busca por Filme",
+      src: "/Screen_2.png",
+      srcLarge: "/Screen_2.png",
+      imageHeight: 4767,
       alt: "App screenshot 3",
       hint: "app screen series",
-    },
+    }
+  ,
     {
-      label: "Series",
-      label_en: "Tv",
-      src: "/serie2.webp",
-      srcLarge: "/segue2-large.webp",
-      alt: "App screenshot 4",
-      hint: "app screen tracking",
-    },
-  ],
-  [
-    {
-      label: "Filmes",
-      label_en: "Movies",
-      src: "/movie.webp",
-      srcLarge: "/movie-large.webp",
+      label: "Cinemas da sua cidade",
+      src: "/Screen_3.png",
+      srcLarge:"/Screen_3",
+      imageHeight: 4196,
       alt: "App screenshot 5",
       hint: "app screen movie",
-    },
+    }
+  ,
     {
-      label: "Filmes",
-      label_en: "Movies",
-      src: "/movie2.webp",
-      srcLarge: "/movie2-large.webp",
-      alt: "App screenshot 6",
-      hint: "app screen series",
-    },
-  ],
-  [
-    {
-      label: "Pessoas",
-      label_en: "Peoples",
-      src: "/person.webp",
-      srcLarge: "/person-large.png",
+      label: "Os cinemas onde está passando o filme",
+      src: "/Screen_1.png",
+      srcLarge: "/Screen_1.png",
+      imageHeight: 4196,
       alt: "App screenshot 7",
       hint: "app screen person",
-    },
-    {
-      label: "Pessoas",
-      label_en: "Peoples",
-      src: "/person2.webp",
-      srcLarge: "/person2-large.png",
-      alt: "App screenshot 8",
-      hint: "app screen series",
-    },
-  ],
+    }
+  ,
 ];
 
 export function VisualShowcase() {
-  const quality = useIsMobile() ? 50 : 100; // Adjust quality based on performance needs
-  const traducoes = {
-    pt: {
-      app: "Aplicativo",
-      desc: "📱 Encontre uma sala de cinama perto de você e seus amigos 📺",
-    },
-  };
-  const language =  traducoes["pt"];
   return (
     <ScrollReveal>
       <section
         id="features"
-        className="relative py-16 sm:py-10 bg-secondary/30"
+        className="overflow-hidden bg-background py-20 sm:py-28"
       >
-        <Image
-          src="cinema background.png"
-          alt="background image oscar"
-          fill
-          quality={quality}
-          className="object-cover opacity-90"
-          data-ai-hint="app showcase"
-        />
-        <div className="relative container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="flex items-center justify-center space-x-1 mb-4">
-              <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">
-                {language.app}
-              </h2>
-              <h2 className="text-3xl md:text-4xl font-italic font-headline mb-4 text-red-700">
-                PopCorn
-              </h2>
-              <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4 text-blue-700">
-                Cinema
-              </h2>
+        <div className="container mx-auto grid items-start gap-12 px-4 md:grid-cols-[minmax(260px,0.8fr)_minmax(0,1.2fr)] md:gap-16 lg:gap-24">
+          <div className="max-w-md md:sticky md:top-12">
+            <span className="flex shrink-0 items-center gap-0 sm:gap-0">
+              <p className="mb-0 text-sm font-bold uppercase text-green-600">
+                B
+              </p>
+              <p className="mb-0 text-sm font-bold uppercase text-yellow-600">
+                R
+              </p>
+            </span>
+            <h2 className="font-headline text-5xl leading-none sm:text-6xl">
+              <span className="text-primary">PopCorn Cinema</span>
+            </h2>
+            <p className="mt-6 text-base leading-7 text-muted-foreground md:text-lg">
+              Encontre uma sala perto de você
+            </p>
+            <p className="mt-0 text-base leading-7 text-muted-foreground md:text-lg">
+              Acompanhe seu cinema favorito e convide seus amigos
+            </p>
+            <div className="mt-8 flex items-center gap-3 border-t border-foreground/15 pt-5 text-sm font-medium">
+              <span className="font-headline text-3xl text-primary">
+                Detalhe
+              </span>
+              <span className="max-w-[480px]">
+                As funções do PopCorn Cinema estão presentes no{" "}
+                <a
+                  href="https://popcorn-web-navy.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline hover:opacity-80"
+                >
+                  PopCorn Show
+                </a>{" "}
+                também
+              </span>
             </div>
-            <p className="text-black-700 md:text-lg">{language.desc}</p>
           </div>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
+          <div className="grid grid-cols-1 justify-items-center gap-x-6 gap-y-12 sm:grid-cols-2 sm:gap-x-4 lg:gap-x-8">
             {features.map((feature, index) => (
               <PhoneMockup key={index} feature={feature} />
             ))}
@@ -138,48 +107,36 @@ export function VisualShowcase() {
   );
 }
 
-const PhoneMockup = ({ feature }: { feature: Feature[] }) => {
-  const quality = useIsMobile() ? 50 : 100; // Adjust quality based on performance needs
-  const [current, setCurrent] = useState(0);
+const PhoneMockup = ({
+  feature,
+}: {
+  feature: Feature;
+}) => {
+  const quality = useIsMobile() ? 50 : 100;
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (imagesLoaded) {
-      interval = setInterval(() => {
-        setCurrent((prev) => (prev === 1 ? 0 : 1));
-      }, 10500);
-    }
-    return () => clearInterval(interval);
-  }, [imagesLoaded, feature.length]);
-  const label = useLanguage() == "pt" ? feature[current].label : feature[current].label_en;
-// TODO remover traducoes
+  const label =  feature.label
   return (
-    <div className="relative w-full max-w-xs text-center">
-      <div className="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[10px] rounded-[2.5rem] h-[540px] w-[270px] shadow-xl">
-        <div className="rounded-[2rem] overflow-hidden w-[250px] h-[520px] bg-white dark:bg-gray-800 relative">
-          {feature.map((_, index) => (
-            <Image
-              key={`${feature[current].src}-${index}`}
-              src={feature[current].src}
-              className={`absolute top-0 left-0 object-cover w-full h-auto animate-scroll-vertical transition-opacity duration-1000 ${
-                imagesLoaded ? "opacity-100" : "opacity-0"
-              }`}
-              width={250}
-              height={800}
-              loading="eager"
-              quality={quality}
-              blurDataURL="popcorn.webp"
-              alt={feature[current].alt}
-              data-ai-hint={feature[current].hint}
-              onLoad={() => {
-                if (index === 0) setImagesLoaded(true);
-              }}
-            />
-          ))}
+    <div className="relative w-full max-w-[230px] text-center">
+      <div className="relative mx-auto h-[460px] w-[230px] rounded-[2rem] border-[8px] border-neutral-800 bg-neutral-800 shadow-xl">
+        <div className="relative h-[444px] w-[214px] overflow-hidden rounded-[1.5rem] bg-white">
+          <Image
+            key={feature.src}
+            src={feature.src}
+            className={`absolute left-0 top-0 h-auto w-full animate-scroll-vertical object-cover transition-opacity duration-1000 ${
+              imagesLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            width={1080}
+            height={feature.imageHeight}
+            loading={"eager"}
+            quality={quality}
+            alt={feature.alt}
+            data-ai-hint={feature.hint}
+            onLoad={() => setImagesLoaded(true)}
+          />
         </div>
       </div>
-      <p className="text-white mt-4 text-lg font-medium">{label}</p>
+      <p className="mt-4 text-sm font-semibold text-foreground">{label}</p>
     </div>
   );
 };
