@@ -14,7 +14,7 @@ export function Header() {
         <nav aria-label="Navegação principal" className="hidden items-center gap-8 text-sm font-medium md:flex"/>
         <div className="flex items-center justify-end">
           <Link
-            href="https://play.google.com/store/apps/details?id=br.com.popcorn.cinema"
+            href="https://play.google.com/store/apps/details?id=br.com.popcorncinema"
             target="_blank"
             rel="noreferrer"
             aria-label="Baixar PopCorn Cinema no Google Play"
