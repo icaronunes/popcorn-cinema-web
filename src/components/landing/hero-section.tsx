@@ -22,15 +22,15 @@ export function HeroSection() {
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/55 to-black/15"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/30 via-black/5 to-black/5"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-black/45 to-transparent"
+        className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-black/85 to-transparent"
       />
       <div className="container mx-auto px-6 py-24 md:px-10 md:py-32">
         <div className="max-w-2xl">
-          <p className="mb-5 text-sm font-bold uppercase text-red-300">
+          <p className="mb-5 text-xl font-bold uppercase text-red-300">
             A sua próxima sessão começa aqui
           </p>
           <h1 className="max-w-xl font-headline text-6xl leading-[0.95] sm:text-7xl md:text-8xl">
